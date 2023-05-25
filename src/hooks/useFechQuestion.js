@@ -16,6 +16,12 @@ const [Questions, setQuestions] = useState([]);
      useEffect(()=>{
         getPreguntas();
      },[recargar])
+
+     //si no hay preguntas ejecuta nuevamente el getPreguntas
+     if(!Questions){
+      getPreguntas();
+      console.log('Cargando Preguntas..')
+     }
   return {
     Questions,
     isLoading
